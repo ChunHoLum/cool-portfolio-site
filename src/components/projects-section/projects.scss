@@ -1,0 +1,65 @@
+.projects__container {
+  animation: transitionIn 0.75s;
+  background-color: var(--project-bg);
+  font-family: inter;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .projects__header{
+    padding-top: 1.2rem;
+    text-align: center;
+    width: 475px;
+    .projects__header__title{
+      font-size: 30px;
+      color: var(--project-header-title);
+    } 
+    .projects__header__description{
+      color: var(--project-header-description)
+    }
+  }
+  
+  .projects__content{
+    padding-top: 1.2rem;
+    text-align: left;
+    width: 475px;
+    .ant-timeline-item-content{
+      transition: all .3s ease-in-out;
+      .ant-card{
+        background-color: var(--project-card-bg);
+        border-color: var(--project-card-border);
+        color: var(--project-card-text);
+        cursor: default;
+        .ant-card-head{
+          border-color: var(--project-card-border);
+          color: var(--project-card-header-text);
+        }
+      }
+    }
+    .ant-timeline{
+      color: var(--project-timeline-text);
+      .ant-timeline-item-tail{
+        border-color: var(--project-timeline-border);
+      }
+      .ant-timeline-item-head{
+        background-color: var(--project-bg);
+      }
+    }
+  }
+}
+@media only screen and (max-width: 680px) {
+  .projects__content{
+    font-family: inter;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.7rem;
+    text-align: left;
+    width: 420px;
+    .ant-timeline-item-content{
+      .ant-card{
+        width: 350px;
+      }
+    }
+  }
+}

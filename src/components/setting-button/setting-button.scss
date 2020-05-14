@@ -1,0 +1,13 @@
+.float-button {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 4rem;
+  margin-right: 4rem;
+  transition: all 0.2s ease-in 0s;
+  z-index: 9999;
+  cursor: pointer;
+}
+// .ant-popover{
+//   position: sticky;
+// }

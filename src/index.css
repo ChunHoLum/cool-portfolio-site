@@ -1,13 +1,157 @@
+:root{
+  font-size: 15px;
+  --white: #fff;
+  --grey: #DCDCDC;
+  --dark-grey0: #707070;
+  --dark-grey1: #7A7A7A;
+  --dark-grey2: #444444;
+  --dark-grey3: #293241;
+  --dark-grey4: #8d8d8d;
+  --dark-grey5: #E8E8E8;
+  --light-grey: #F1F1F1;
+  --light-grey1:#f0f0f0;
+  --black0: #242424;
+  --black1: #141414;
+  --black: #000000;
+  --black2:rgba(0, 0, 0, 0.65);
+  --black3: rgba(0, 0, 0, 0.85);
+  --black4: rgb(24, 24, 24);
+  --black5: #1b1b1b;
+  --blue0: rgb(73, 161, 250);
+  --blue1: #3097FF;
+  --blue2: rgb(0, 128, 255);
+  --blue3: rgb(71, 161, 250);
+  --transparent: rgba(0,0,0,0);
+  
+}
+.light {
+  --contact-bg: var(--white);
+  --contact-header-title: var(--black0);
+  
+  --about-bg: var(--dark-grey5);
+  --about-text: var(--black0);
+  --about-text-description: var(--black2);
+  --about-border: var(--transparent);
+
+  --project-bg: var(--white);
+  --project-header-title: var(--black3);
+  --project-header-description: var(--black3);
+  --project-card-bg: var(--white);
+  --project-card-border: var(--light-grey1);
+  --project-card-header-text: var(--black3);
+  --project-card-text: var(--black2);
+  --project-timeline-text: var(--black2);
+  --project-timeline-border: var(--light-grey1);
+
+  --nav-bg: var(--white);
+  --nav-border: var(--grey);
+  --nav-text: var(--dark-grey3);
+  --nav-text-hover: var(--blue1);
+
+  --msg-text: var(--dark-grey1);
+  --msg-bg: var(--light-grey);
+  --msg-border: var(--grey);
+  --msg-link: var(--blue1);
+
+  --hero-bg: var(--white);
+  --hero-name: var(--black);
+  --hero-name-hover: var(--blue2);
+  --hero-description: var(--dark-grey2);
+  --hero-contact-btn-text: var(--white);
+  --hero-contact-btn-bg: var(--blue2);
+  --hero-contact-btn-shadow: var(--dark-grey0);
+  --hero-contact-btn-hover: var(--blue0);
+
+  --hero-project-btn-text: var(--dark-grey0);
+  --hero-project-btn-bg: var(--white);
+  --hero-project-btn-shadow: var(--dark-grey0);
+  --hero-project-btn-border: var(--dark-grey4);
+}
+.dark {
+  --contact-bg: var(--black1);
+  --contact-header-title: var(--white);
+  --hero-bg: var(--black1);
+  --hero-name: var(--grey);
+  --hero-name-hover: var(--blue2);
+  --hero-description: var(--dark-grey1);
+  --hero-contact-btn-text: var(--white);
+  --hero-contact-btn-bg: var(--blue2);
+  --hero-contact-btn-shadow: var(--dark-grey2);
+  --hero-contact-btn-hover: var(--blue0);
+  --hero-project-btn-text: var(--white);
+  --hero-project-btn-bg: var(--dark-grey2);
+  --hero-project-btn-shadow: var(--dark-grey2);
+  --hero-project-btn-border: var(--dark-grey2);
+  --nav-bg: var(--black1);
+  --nav-border: var(--dark-grey2);
+  --nav-text: var(--grey);
+  --nav-text-hover: var(--blue1);
+  --msg-text: var(--grey);
+  --msg-bg: var(--black3);
+  --msg-border: var(--grey);
+  --msg-link: var(--blue3);
+  --about-bg: var(--black5);
+  --about-text: var(--white);
+  --about-text-description: var(--grey);
+  --project-bg: var(--black1);
+  --project-header-title: var(--white);
+  --project-header-description: var(--dark-grey1);
+  --project-card-bg: var(--black1);
+  --project-card-border: var(--dark-grey2);
+  --project-card-header-text: var(--grey);
+  --project-card-text: var(--grey);
+  --project-timeline-text: var(--dark-grey1);
+  --project-timeline-border: var(--black0);
+
+}
+html{
+  scroll-behavior: smooth;
+}
 body {
+  transition: background 500ms ease-in-out, color 1000ms ease-in-out;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  overflow-x: hidden;
+  font-family: 'Inter', -apple-system,  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+.nav-section{
+  max-height: 5.3rem;
+  background-color: var(--nav-bg);
+}
+.msg-section{
+  max-height: 3.3rem;
+  background-color: var(--msg-bg);
+}
+.hero-section{
+  min-height: 400px;
+  width: 100vw;
+  background-color: var(--hero-bg);
+}
+.skills-section{
+  min-height: 400px;
+  background-color: var(--black0);
+}
+.projects-section{
+  min-height: 400px;
+  width: 100%;
+  background-color: var(--project-bg);
+}
+
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Consolas, monospace;
+}
+
+
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: rotateX(-10deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
 }

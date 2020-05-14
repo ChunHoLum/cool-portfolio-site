@@ -1,0 +1,130 @@
+
+.hero__container{
+  animation: transitionIn 0.75s;
+
+  /* height: 50vh; */
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+  background-color: var(--hero-bg);
+                              }
+.background__container{
+  position: relative;
+  display: inline-block;
+}
+.text__wrapper{
+  width: 65%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate( -50%, -50% );
+  text-align: center;
+  transition: all 1s ease-in-out;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+}
+.hero__name{
+  width: 100%;
+  font-family: 'Inter';
+  font-size: 4.86rem;
+  // letter-spacing: -0.2rem;
+  font-weight: bolder;
+  color: var(--hero-name);
+}
+.hero__name__letters{
+  transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+.hero__name__letters:hover{
+  letter-spacing: 0.6rem;
+  color: var(--hero-name-hover);
+}
+.hero__description{
+  width: 100%;
+  font-size: 2rem;
+  color: var(--hero-description); 
+}
+
+.hero__buttons{
+  margin-top: 2.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+.hero__buttons button{
+  font-family: 'inter';
+  width: 10rem;
+  height:  2.3rem;
+  font-size: 1rem;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: all 1000ms cubic-bezier(0.19, 1, 0.22, 1);
+
+}
+#hero__buttons__contact{
+  color: var(--hero-contact-btn-text);
+  background-color: var(--hero-contact-btn-bg);
+  border: 0px;
+  box-shadow: 0px 1px 4px var(--hero-contact-btn-shadow);
+}
+#hero__buttons__contact:hover{
+  letter-spacing: 2px;
+  background-color: var(--hero-contact-btn-hover);
+
+}
+#hero__buttons__projects{
+  color: var(--hero-project-btn-text);
+  background-color: var(--hero-project-btn-bg);
+  border: 1px solid var(--hero-project-btn-border);
+  box-shadow: 0px 1px 4px var(--hero-project-btn-shadow);
+}
+#hero__buttons__projects:hover{
+  letter-spacing: 2px;
+}
+
+.background__container .background__img {
+  scale: 1;
+  opacity: 5%;
+  position: relative;
+}
+
+@media only screen and (max-width: 880px) {
+  .text__wrapper{
+    .hero__name{
+      font-size: 4rem;
+    }
+    .hero__description{
+      width: 100%;
+      font-size: 1.5rem;
+      color: #444444; 
+    }
+    .hero__buttons{
+      justify-content: space-evenly;
+    }
+  }
+}
+@media only screen and (max-width: 680px) {
+  
+    .hero__buttons{
+      flex-direction: column;
+      justify-content: space-evenly;
+      #hero__buttons__contact{
+        width: 14rem;
+        margin-top: 3rem;
+      }
+      #hero__buttons__projects{
+        width: 14rem;
+        margin-top: 3rem;
+      }
+
+    }
+  
+}

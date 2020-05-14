@@ -1,0 +1,36 @@
+.about__container {
+  font-family: inter;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+  background-color: var(--about-bg);
+  // border-top: 1px solid;
+  // border-bottom: 1px solid;
+  // border-color: var(--about-border);
+  .about__header{
+    padding-top: 1.2rem;
+    text-align: center;
+    width: 475px;
+    .about__header__title{
+      font-size: 30px;
+      color: var(--about-text);
+    } 
+  }
+  .about__content{
+    padding-top: 1.2rem;
+    text-align: center;
+    width: 50vw;
+    color: var(--about-text-description);
+    
+    
+    .about__content__list{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: left; 
+    }
+  }
+  
+}
