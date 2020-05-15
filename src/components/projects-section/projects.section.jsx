@@ -49,7 +49,7 @@ class Projects extends React.Component {
                     A rapid build responsive portfoilo site using react
                 </p>
                   <p>
-                    <a href="https://github.com/ChunHoLum/nodejs-backend-boilerplate" target="_blank" rel="noopener noreferrer"> GitHub Available</a>
+                    <a href="https://github.com/ChunHoLum/cool-portfolio-site" target="_blank" rel="noopener noreferrer"> GitHub Available</a>
                   </p>
                   <Tag color="#5ED4F4">React.js</Tag>
                   <Tag color="#F7A614">Javascript</Tag>

@@ -1,7 +1,7 @@
 .projects__container {
   animation: transitionIn 0.75s;
   background-color: var(--project-bg);
-  font-family: inter;
+  font-family: inter, -apple-system,  sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,7 +49,7 @@
 }
 @media only screen and (max-width: 680px) {
   .projects__content{
-    font-family: inter;
+    font-family: inter, -apple-system,  sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -33,7 +33,7 @@
 }
 .hero__name{
   width: 100%;
-  font-family: 'Inter';
+  font-family: inter, -apple-system,  sans-serif;
   font-size: 4.86rem;
   // letter-spacing: -0.2rem;
   font-weight: bolder;
@@ -60,7 +60,7 @@
   
 }
 .hero__buttons button{
-  font-family: 'inter';
+  font-family: inter, -apple-system,  sans-serif;
   width: 10rem;
   height:  2.3rem;
   font-size: 1rem;
