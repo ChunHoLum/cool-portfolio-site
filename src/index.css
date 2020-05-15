@@ -114,7 +114,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.App{
+  overflow-x: hidden !important;
+}
 .nav-section{
   max-height: 5.3rem;
   background-color: var(--nav-bg);
