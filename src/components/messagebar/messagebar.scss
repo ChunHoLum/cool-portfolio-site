@@ -8,11 +8,11 @@
   color: var(--msg-text);
   font-size: 1rem;
   background-color: var(--msg-bg);
+  // border-bottom: 1px solid var(--nav-border);
   height: 3.3rem;
 }
 .messagebar a{
   color: var(--msg-link);
-
 }
 
 @media only screen and (max-width: 880px) {

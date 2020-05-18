@@ -1,24 +1,24 @@
 import React, { lazy, Suspense } from 'react';
-import './App.css';
+import lax from 'lax.js';
 
+import './App.css';
 // import Navbar from './components/navbar/navbar';
 // import Messagebar from './components/messagebar/messagebar';
-import Hero from './components/hero-section/hero.section';
+// import Hero from './components/hero-section/hero.section';
 // import Skills from './components/skills-section/skills.section';
 // import Projects from './components/projects-section/projects.section';
 // import About from './components/about-section/about.section';
 // import Contact from './components/contact-section/contact.section';
 // import Footer from './components/footer/footer';
 // import SettingButton from './components/setting-button/setting-button';
-// import LazyLoad from 'react-lazyload';
 
 const Navbar = lazy(() => import('./components/navbar/navbar'));
 const Messagebar = lazy(() => import('./components/messagebar/messagebar'));
-// const Hero = lazy(() => import('./components/hero-section/hero.section'));
+const Hero = lazy(() => import('./components/hero-section/hero.section'));
 const Skills = lazy(() => import('./components/skills-section/skills.section'));
 const Projects = lazy(() => import('./components/projects-section/projects.section'));
 const About = lazy(() => import('./components/about-section/about.section'));
-const Contact = lazy(() => import('./components/contact-section/contact.section'));
+// const Contact = lazy(() => import('./components/contact-section/contact.section'));
 const Footer = lazy(() => import('./components/footer/footer'));
 const SettingButton = lazy(() => import('./components/setting-button/setting-button'));
 
@@ -33,12 +33,15 @@ class App extends React.Component {
       themePreference: 'light'
     }
     this.appRef = React.createRef();
+    lax.setup();
+
   }
 
 
   hide = () => { this.setState({ visible: false, }); };
 
   componentDidMount() {
+
     setTimeout(() => { this.setState({ visible: true, }) }, 500)
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       // dark mode
@@ -57,11 +60,12 @@ class App extends React.Component {
   render() {
     return (
       <div ref={this.appRef} className="App light" onScroll={this.onScroll}>
+
         <Suspense fallback={renderLoader()}>
-          <Navbar className="nav-section" />
+          <Navbar />
         </Suspense>
         <Suspense fallback={renderLoader()}>
-          <Messagebar className="msg-section" />
+          <Messagebar />
         </Suspense>
         <section className="hero-section" id="hero-section">
           <Suspense fallback={renderLoader()}>
@@ -84,11 +88,11 @@ class App extends React.Component {
             <About />
           </Suspense>
         </section>
-        <section className="contact-section" id="contact-section">
+        {/* <section className="contact-section" id="contact-section">
           <Suspense fallback={renderLoader()}>
             <Contact />
           </Suspense>
-        </section>
+        </section>  */}
         <Suspense fallback={renderLoader()}>
           <Footer />
         </Suspense>

@@ -1,9 +1,8 @@
 .skills__container{
   animation: transitionIn 0.75s;
-
   font-family: inter, -apple-system,  sans-serif;
-  background-color: #1b1b1b;
-  // height: 120vh;
+  background-color: var(--skills-bg);
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,9 +11,10 @@
     padding-top: 1.2rem;
     text-align: center;
     width: 31.6rem;
+    transition: all 0.5s ease-in-out;
     .skills__header__title{
       font-size: 2rem;
-      color: #E9E9E9;
+      color: var(--skills-header-title);
     }
     .searchbar{
       font-size: 1rem;
@@ -24,6 +24,7 @@
   }
   .skills__card__container{
     // background-color: red;
+    transition: all 0.5s ease-in-out;
     padding-top: 3rem;
     padding-bottom: 5rem;
     width: 70vw;
@@ -31,21 +32,20 @@
     grid-gap: 2rem 2rem;
     justify-items: center;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    .skills__card{
-      
+    .skills__card{   
       cursor: pointer;
       display: flex;
       flex-direction: column;
       border-radius: 0px;
-      border: 1px solid #707070;
-      background-color: rgb(39, 39, 39);
+      border: 1px solid var(--skill-card-border);
+      background-color: var(--skills-card-bg);
       transition: all .5s ease-in-out;
       max-height: 9rem;
       width: 100%;
       overflow: hidden;
       .skills__card__title{
         font-size: 1.1rem;
-        color: #E9E9E9;
+        color: var(--skills-header-title);
         padding-top: 0.5rem;
         padding-bottom: 1.3rem;
         padding-left: 1rem;
@@ -53,7 +53,7 @@
       .skills__card__description{
         font-size: 1rem;
         height: 4.3rem;
-        color: #B7B7B7;
+        color: var(--skills-card-description);
         padding-left: 1rem;
         transition: all .5s ease-in-out ;
       }
@@ -63,7 +63,7 @@
         opacity: 0;
         height: 0rem;
         font-size: 1rem;
-        color: #B7B7B7;
+        color: var(--skills-card-description);
         padding-right: 3rem;
         padding-left: 1rem;
         // padding-top: 3rem;
@@ -72,7 +72,7 @@
       }
       .skills__card__footer{
         font-size: 1rem;
-        color: #3097FF;
+        color: var(--skills-card-hover);
         text-align: right;
         padding-bottom: 0.5rem;
         padding-right: 1rem;
@@ -81,7 +81,7 @@
     }
     .skills__card:hover{
       max-height: 200rem;
-      border: 1px solid #3097FF;
+      border: 1px solid var(--skills-card-hover);
       .skills__card__description{
         opacity: 0;
         height: 0rem;
@@ -99,9 +99,7 @@
       }
     }
   }
-
   .skills__card__search__container{
-  
     // position: absolute;
     // top: 0;
     padding-top: 3rem;
@@ -115,22 +113,22 @@
       cursor: pointer;
       display: flex;
       flex-direction: column;
-      border-radius: 24px;
-      border: 1px solid #707070;
-      background-color: #2B2B2B;
+      border-radius: 0px;
+      border: 1px solid var(--skill-card-border);
+      background-color: var(--skills-card-bg);
       transition: all .5s ease-in-out;
       height: auto;
       width: 100%;
       .search__card__title{
         font-size: 1.1rem;
-        color: #E9E9E9;
+        color: var(--skills-header-title);
         padding-top: 0.5rem;
         padding-bottom: 1.3rem;
         padding-left: 1rem;
       }
       .search__card__description{
         font-size: 1rem;
-        color: #B7B7B7;
+        color: var(--skills-card-description);
         height:auto;
         padding-left: 1rem;
         padding-bottom: 0.5rem;
@@ -140,7 +138,7 @@
         justify-content: space-between;
         height: 2rem;
         font-size: 1rem;
-        color: #B7B7B7;
+        color: var(--skills-card-description);
         padding-right: 3rem;
         padding-left: 1rem;
         &:hover{
@@ -148,6 +146,9 @@
         }
       }
       
+    }
+    .search__card:hover{
+      border-color: var(--skills-card-hover);
     }
   }
 
@@ -158,6 +159,7 @@
 
 @media only screen and (max-width: 680px) {
   .skills__header{
+    width: 100% !important;
     .searchbar{
       width: 75%;
     }

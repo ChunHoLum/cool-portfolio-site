@@ -2,12 +2,29 @@
   position: fixed;
   bottom: 0;
   right: 0;
-  margin-bottom: 4rem;
-  margin-right: 4rem;
+  margin-bottom: 3rem;
+  margin-right: 3rem;
   transition: all 0.2s ease-in 0s;
   z-index: 9999;
   cursor: pointer;
+  // animation: bounce .75s ease-in-out infinite;
+  &:hover{
+    animation: none;
+  }
+
 }
 // .ant-popover{
 //   position: sticky;
 // }
+
+@keyframes bounce{
+  0% {
+    margin-bottom: 3rem
+  } 
+  50% {
+    margin-bottom: 4rem
+  }
+  100% {
+    margin-bottom: 3rem
+  } 
+}

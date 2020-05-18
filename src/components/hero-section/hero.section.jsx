@@ -1,34 +1,48 @@
 import React from 'react';
+import lax from 'lax.js';
 import './hero.scss';
 import bg from '../../assets/img/background-wordcloud.png'; // with import
-import { Link } from "react-scroll";
-
 class Hero extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.bg_img = React.createRef();
+    this.text_wrapper = React.createRef();
 
   }
+  componentDidMount() {
+    document.addEventListener('scroll', function (x) {
+      lax.update(window.scrollY)
+    }, false)
+
+    lax.update(window.scrollY)
+    lax.addElement(this.text_wrapper.current)
+    lax.addElement(this.bg_img.current)
+  }
+
+  componentWillUnmount() {
+    lax.removeElement(this.text_wrapper.current)
+    lax.removeElement(this.bg_img.current)
+  }
   mouserMoveParllax = (e) => {
-    // const bg_img = document.querySelector('background__img');
-    const x = - e.clientX / 30;
-    const y = - e.clientY / 30;
-    // console.log({ x, y })
-    this.bg_img.current.style.left = `${x}px`;
+    const x = e.clientX / 60;
+    const y = - e.clientY / 60;
     this.bg_img.current.style.top = `${y}px`;
+    this.bg_img.current.style.right = `${x}px`;
+
   }
 
   render() {
 
     return (
-      <div className="hero__container" onMouseMove={this.mouserMoveParllax}>
+      <div className="hero__container" onMouseMove={this.mouserMoveParllax} >
+
         <div className="background__container">
-          <img className="background__img" ref={this.bg_img} src={bg} alt="word cloud"></img>
+          <img className="background__img" ref={this.bg_img} src={bg} alt="word cloud" ></img>
 
-          <div className="text__wrapper">
+          <div className="text__wrapper" ref={this.text_wrapper} data-lax-opacity="0 1, 100 1, 200 0, 300 0" data-lax-translate-y="0 0, 400 -400">
 
-            <div className="hero__name" id="name">
-              <span className="hero__name__letters">L</span>
+            <div className="hero__name" id="name" >
+              <span className="hero__name__letters" >L</span>
               <span className="hero__name__letters">u</span>
               <span className="hero__name__letters">m</span>
               <span className="hero__name__letters"> </span>
@@ -41,7 +55,7 @@ class Hero extends React.Component {
               <span className="hero__name__letters">o</span>
               {/* Lum Chun Ho */}
             </div>
-            <div className="hero__description">
+            <div className="hero__description" ref={this.text_wrapper2}>
 
               <span className="hero__name__letters">F</span>
               <span className="hero__name__letters">u</span>
@@ -73,26 +87,26 @@ class Hero extends React.Component {
               <span role="img" aria-label="Labtop Emoji">💻</span>
             </div>
             <div className="hero__buttons">
-              <Link
+              {/* <Link
                 to="contact-section"
                 offset={-70}
                 duration={300}
               >
                 <button id="hero__buttons__contact">Contact</button>
-              </Link>
-              <Link
+              </Link> */}
+              {/* <Link
                 to="projects-section"
                 offset={-70}
                 duration={300}
               >
                 <button id="hero__buttons__projects" >Projects</button>
 
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
 
-      </div>
+      </div >
     )
   }
 }

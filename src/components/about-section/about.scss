@@ -1,36 +1,52 @@
 .about__container {
-  font-family: inter, -apple-system,  sans-serif;
+  // 
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   height: auto;
   background-color: var(--about-bg);
+  padding-bottom: 1rem;
   // border-top: 1px solid;
   // border-bottom: 1px solid;
   // border-color: var(--about-border);
   .about__header{
+    font-family: inter, -apple-system,  sans-serif;
     padding-top: 1.2rem;
     text-align: center;
-    width: 475px;
+    width: 100%;
     .about__header__title{
-      font-size: 30px;
-      color: var(--about-text);
+      font-size: 25px;
+      color: var(--about-header);
     } 
   }
   .about__content{
     padding-top: 1.2rem;
     text-align: center;
     width: 50vw;
-    color: var(--about-text-description);
-    
-    
+    color: var(--about-text);
+    font-size: 1rem;
     .about__content__list{
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: left; 
     }
+  }
+
+  .contact__header{
+    font-family: inter, -apple-system,  sans-serif;
+    text-align: center;
+    width: 100%;
+    .contact__header__title{
+      
+      font-size: 20px;
+      color: var(--about-header);
+    } 
+    
+  }
+  .contact__content{
+    color: var(--about-text);
   }
   
 }

@@ -3,10 +3,6 @@ import './setting-button.scss'
 import { Menu, Dropdown, Button, Popover } from 'antd';
 import { SettingOutlined } from '@ant-design/icons';
 
-
-
-
-
 const SettingButton = ({ visible, hide, appRef, themePreference }) => {
   const [localThemePreference, setLocalThemePreference] = useState(themePreference);
   const clickDarkButton = () => {
@@ -31,13 +27,14 @@ const SettingButton = ({ visible, hide, appRef, themePreference }) => {
   return (
     <Popover
       placement="left"
-      content="⚡ Got your device preference theme 😝"
+      content="⚡ You don't know the power of the dark side. "
       trigger="click"
       visible={visible}
       onVisibleChange={hide}
+      className="float-button"
     >
-      <Dropdown overlay={menu} placement="topCenter">
-        <Button className="float-button" type="primary" shape="circle" icon={<SettingOutlined />} size="large" />
+      <Dropdown overlay={menu} placement="topCenter" className="dropdowntheme">
+        <Button type="primary" shape="circle" icon={<SettingOutlined />} size="large" />
       </Dropdown>
     </Popover>
 

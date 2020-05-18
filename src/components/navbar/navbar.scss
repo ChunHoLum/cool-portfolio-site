@@ -55,6 +55,9 @@
       .navbar__item__icon{
         display: inline-block;
       }
+      .navbar__item{
+        display: none;
+      }
       &:hover .navbar__item__icon{
         // transform: scale(0.8);
         animation: scaleDown 0.3s ease-in-out forwards;
@@ -68,6 +71,6 @@
     transform: scale(1);
   }
   100%{
-    transform: scale(0.8);
+    transform: scale(1.2);
   }
 }

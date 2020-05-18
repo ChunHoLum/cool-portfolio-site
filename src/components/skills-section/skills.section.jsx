@@ -1,5 +1,5 @@
 import React from 'react';
-
+import lax from 'lax.js';
 import SearchBar from './searchBar';
 import SearchCard from './searchCard';
 import SkillCard from './skillCard';
@@ -157,12 +157,27 @@ class Skills extends React.Component {
       searchField: "",
       size: "middle"
     };
+    this.header = React.createRef();
+    this.card_container_ref = React.createRef()
+    this.search_container_ref = React.createRef()
+  }
+  componentDidMount() {
+    document.addEventListener('scroll', function (x) {
+      lax.update(window.scrollY)
+    }, false)
+
+    lax.update(window.scrollY)
+    lax.addElement(this.header.current)
+    lax.addElement(this.card_container_ref.current)
+  }
+  componentWillUnmount() {
+    lax.removeElement(this.header.current)
+    lax.removeElement(this.card_container_ref.current)
   }
   handleChange = (e) => {
     this.setState({
       searchField: e.target.value,
     });
-
   }
   handleFocus = (e) => {
     this.card_container_ref.current.classList.add('disappear');
@@ -174,8 +189,7 @@ class Skills extends React.Component {
     this.search_container_ref.current.classList.add('disappear');
     this.setState({ size: "middle" })
   }
-  card_container_ref = React.createRef()
-  search_container_ref = React.createRef()
+
   render() {
     let filteredSkills = [];
     if (!this.state.searchField.trim()) {
@@ -188,7 +202,7 @@ class Skills extends React.Component {
     }
     return (
       <div className="skills__container">
-        <div className="skills__header">
+        <div className="skills__header" ref={this.header} data-lax-blur="0 5, 400 0,790 0, 800 1, 1000 5" >
           <div className="skills__header__title">What can I do ?</div>
           <br></br>
           <SearchBar
@@ -198,7 +212,7 @@ class Skills extends React.Component {
             handleBlur={this.handleBlur}
           />
         </div>
-        <div className="skills__card__container" ref={this.card_container_ref}>
+        <div className="skills__card__container" ref={this.card_container_ref} data-lax-blur="0 5,  400 0, 790 0, 800 1, 1000 5 " data-lax-opacity="0 0, 100 0, 400 1" data-lax-translate-y="0 100,  400 0">
           {skills.map((skill, index) =>
             <SkillCard skill={skill} key={index} />
           )}
@@ -210,7 +224,7 @@ class Skills extends React.Component {
           }} />
 
         </div>
-      </div>
+      </div >
     );
   }
 

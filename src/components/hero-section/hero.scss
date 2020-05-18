@@ -1,8 +1,8 @@
 
 .hero__container{
   animation: transitionIn 0.75s;
-
-  /* height: 50vh; */
+  height: 70vh;
+  overflow: hidden;
   display: grid;
   justify-content: center;
   align-items: center;
@@ -22,9 +22,13 @@
 .text__wrapper{
   width: 65%;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate( -50%, -50% );
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top:35%;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate( -50%, -50% );
   text-align: center;
   transition: all 1s ease-in-out;
   /* display: flex;
@@ -32,6 +36,7 @@
   justify-content: space-between; */
 }
 .hero__name{
+  position: relative;
   width: 100%;
   font-family: inter, -apple-system,  sans-serif;
   font-size: 4.86rem;
@@ -47,6 +52,7 @@
   color: var(--hero-name-hover);
 }
 .hero__description{
+  position: relative;
   width: 100%;
   font-size: 2rem;
   color: var(--hero-description); 
@@ -55,7 +61,7 @@
 .hero__buttons{
   margin-top: 2.6rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   
 }
@@ -69,17 +75,17 @@
   transition: all 1000ms cubic-bezier(0.19, 1, 0.22, 1);
 
 }
-#hero__buttons__contact{
-  color: var(--hero-contact-btn-text);
-  background-color: var(--hero-contact-btn-bg);
-  border: 0px;
-  box-shadow: 0px 1px 4px var(--hero-contact-btn-shadow);
-}
-#hero__buttons__contact:hover{
-  letter-spacing: 2px;
-  background-color: var(--hero-contact-btn-hover);
+// #hero__buttons__contact{
+//   color: var(--hero-contact-btn-text);
+//   background-color: var(--hero-contact-btn-bg);
+//   border: 0px;
+//   box-shadow: 0px 1px 4px var(--hero-contact-btn-shadow);
+// }
+// #hero__buttons__contact:hover{
+//   letter-spacing: 2px;
+//   background-color: var(--hero-contact-btn-hover);
 
-}
+// }
 #hero__buttons__projects{
   color: var(--hero-project-btn-text);
   background-color: var(--hero-project-btn-bg);

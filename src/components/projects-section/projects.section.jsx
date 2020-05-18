@@ -1,4 +1,5 @@
 import React from 'react';
+import lax from 'lax.js';
 import { Timeline, Card, Tag, Tooltip } from 'antd';
 import './projects.scss';
 
@@ -9,14 +10,25 @@ class Projects extends React.Component {
       toggle: true,
       tooltipPlacement: "left",
     };
+    this.project_header = React.createRef()
+    this.project_card = React.createRef()
+
   }
   componentDidMount() {
     this.updateWindowDimensions();
-    window.addEventListener('resize', this.updateWindowDimensions);
+    window.addEventListener('resize', this.updateWindowDimensions); document.addEventListener('scroll', function (x) {
+      lax.update(window.scrollY)
+    }, false)
+
+    lax.update(window.scrollY)
+    lax.addElement(this.project_header.current)
+    lax.addElement(this.project_card.current)
   }
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.updateWindowDimensions);
+    lax.removeElement(this.project_header.current)
+    lax.removeElement(this.project_card.current)
   }
 
   updateWindowDimensions = () => {
@@ -30,7 +42,7 @@ class Projects extends React.Component {
     const { tooltipPlacement } = this.state;
     return (
       <div className="projects__container">
-        <div className="projects__header">
+        <div className="projects__header" ref={this.project_header} data-lax-blur="0 5, 400 5,790 5,1000 0">
           <div className="projects__header__title">What did I make ?</div>
           <div className="projects__header__description">
             not much yet...
@@ -38,7 +50,7 @@ class Projects extends React.Component {
             Gimme some time
           </div>
         </div>
-        <div className="projects__content">
+        <div className="projects__content" ref={this.project_card} data-lax-blur="0 5, 400 5,790 5,1000 0">
           <br></br>
           <Timeline >
             <Tooltip title="🛠 Constantly Updating" placement={tooltipPlacement}>
@@ -99,7 +111,7 @@ class Projects extends React.Component {
             <Tooltip title="👍 Done" placement={tooltipPlacement}>
               <Timeline.Item color="green">
                 2019-08 to 2020-05
-              <Card size="small" title="Capston Project🎉- Digital Identity Management Framework" hoverable >
+              <Card size="small" title="Capstone Project🎉- Digital Identity Management Framework" hoverable >
                   <p>
                     A digital identity management framework using blockchain technology.
                   </p>

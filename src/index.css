@@ -2,12 +2,16 @@
   font-size: 15px;
   --white: #fff;
   --grey: #DCDCDC;
+  --grey0: #3f3f3f;
+  --grey1: #B7B7B7;
+  --grey2: rgb(219, 219, 219);
   --dark-grey0: #707070;
   --dark-grey1: #7A7A7A;
   --dark-grey2: #444444;
   --dark-grey3: #293241;
   --dark-grey4: #8d8d8d;
   --dark-grey5: #E8E8E8;
+  --dark-grey6: #E9E9E9;
   --light-grey: #F1F1F1;
   --light-grey1:#f0f0f0;
   --black0: #242424;
@@ -17,21 +21,33 @@
   --black3: rgba(0, 0, 0, 0.85);
   --black4: rgb(24, 24, 24);
   --black5: #1b1b1b;
+
+  --black6:rgb(26, 26, 26);
   --blue0: rgb(73, 161, 250);
   --blue1: #3097FF;
   --blue2: rgb(0, 128, 255);
   --blue3: rgb(71, 161, 250);
   --transparent: rgba(0,0,0,0);
-  
+  --black7: #313131;
+  --black8: #1f1e1e;
+  --black9: rgb(158, 158, 158);
 }
 .light {
+  --about-bg: var(--light-grey1);
+  --about-text: var(--dark-grey4);
+  --about-header: var(--black2);
+
+  --footer-bg: var(--black5);
+  --skills-bg: var(--light-grey);
+  --skills-header-title: var(--black1);
+  --skills-card-bg: var(--white);
+  --skill-card-border: var(--grey2);
+  --skills-card-description: var(--dark-grey1);
+  --skills-card-hover: var(--blue1);
+
   --contact-bg: var(--white);
   --contact-header-title: var(--black0);
   
-  --about-bg: var(--dark-grey5);
-  --about-text: var(--black0);
-  --about-text-description: var(--black2);
-  --about-border: var(--transparent);
 
   --project-bg: var(--white);
   --project-header-title: var(--black3);
@@ -68,6 +84,21 @@
   --hero-project-btn-border: var(--dark-grey4);
 }
 .dark {
+  --footer-bg: var(--black5);
+  --about-bg: var(--black8);
+  --about-text: var(--black9);
+  --about-header: var(--white);
+  --msg-text: var(--grey);
+  --msg-bg: var(--black3);
+  --msg-border: var(--grey);
+  --msg-link: var(--blue3);
+  
+  --skills-bg: var(--black4);
+  --skills-header-title: var(--dark-grey6);
+  --skills-card-bg: var(--black6);
+  --skill-card-border: var(--grey0);
+  --skills-card-description: var(--grey1);
+  --skills-card-hover: var(--blue1);
   --contact-bg: var(--black1);
   --contact-header-title: var(--white);
   --hero-bg: var(--black1);
@@ -86,13 +117,9 @@
   --nav-border: var(--dark-grey2);
   --nav-text: var(--grey);
   --nav-text-hover: var(--blue1);
-  --msg-text: var(--grey);
-  --msg-bg: var(--black3);
-  --msg-border: var(--grey);
-  --msg-link: var(--blue3);
-  --about-bg: var(--black5);
-  --about-text: var(--white);
-  --about-text-description: var(--grey);
+
+  
+  
   --project-bg: var(--black1);
   --project-header-title: var(--white);
   --project-header-description: var(--dark-grey1);
@@ -114,25 +141,25 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.App{
+/* .App{
   overflow-x: hidden !important;
-}
+} */
 .nav-section{
-  max-height: 5.3rem;
+  max-height: 79.5px;
   background-color: var(--nav-bg);
 }
 .msg-section{
-  max-height: 3.3rem;
+  min-height: 49.5px;
   background-color: var(--msg-bg);
 }
 .hero-section{
   min-height: 400px;
-  width: 100vw;
+  width: 100%;
   background-color: var(--hero-bg);
 }
 .skills-section{
   min-height: 400px;
-  background-color: var(--black0);
+  background-color: var(--skills-bg);
 }
 .projects-section{
   min-height: 400px;

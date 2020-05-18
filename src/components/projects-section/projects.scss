@@ -6,10 +6,12 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding-bottom: 4rem;
   .projects__header{
     padding-top: 1.2rem;
     text-align: center;
     width: 475px;
+    transition: all 0.5s ease-in-out;
     .projects__header__title{
       font-size: 30px;
       color: var(--project-header-title);
@@ -20,6 +22,7 @@
   }
   
   .projects__content{
+    transition: all 0.5s ease-in-out;
     padding-top: 1.2rem;
     text-align: left;
     width: 475px;
@@ -35,6 +38,13 @@
           color: var(--project-card-header-text);
         }
       }
+      .ant-card:hover{
+        transform: scale(1.07);
+      }
+      .ant-card:hover ~ .ant-card{
+        transform: scale(1.1);
+      }
+      
     }
     .ant-timeline{
       color: var(--project-timeline-text);
@@ -48,6 +58,10 @@
   }
 }
 @media only screen and (max-width: 680px) {
+  .projects__header{
+    width: 100% !important;
+  }
+
   .projects__content{
     font-family: inter, -apple-system,  sans-serif;
     display: flex;
@@ -55,7 +69,7 @@
     align-items: center;
     margin-top: 1.7rem;
     text-align: left;
-    width: 420px;
+    width: 100% !important;
     .ant-timeline-item-content{
       .ant-card{
         width: 350px;

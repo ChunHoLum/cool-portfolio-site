@@ -26,7 +26,7 @@ const Messagebar = () => {
           <span><b>Who Am I ?</b></span>
           <span>&emsp;——&emsp; </span>
           <span>A passionate, progressive guy and a enthusiast of Web Development.</span>
-          &emsp;<a href="https://noobbucket.s3.us-east-2.amazonaws.com/cv_lumchunho.pdf" target="_blank" rel="noopener noreferrer"> Download full resume !</a>
+          &emsp;<a href="https://noobbucket.s3.us-east-2.amazonaws.com/lumchunho.pdf" target="_blank" rel="noopener noreferrer"> Download full resume !</a>
         </>
         :
         <>
