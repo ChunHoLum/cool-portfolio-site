@@ -5,7 +5,7 @@
   top: 0;
   background-color: var(--nav-bg);
   border-bottom: 1px solid var(--nav-border);
-  z-index: 10000;
+  z-index: 999;
   display: grid;
   grid-template-columns: auto auto auto auto ;
   justify-content: center;

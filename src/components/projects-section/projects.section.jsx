@@ -1,19 +1,26 @@
 import React from 'react';
 import lax from 'lax.js';
-import { Timeline, Card, Tag, Tooltip } from 'antd';
-import './projects.scss';
+import ProjectCard from './projectCard.component';
+import CapstoneProjectModal from './modals/capstoneProjectModal';
+import LearningPortalModal from './modals/learningPortalModal';
+import { Timeline, Button } from 'antd';
 
+import './projects.scss';
 class Projects extends React.Component {
   constructor() {
     super();
     this.state = {
       toggle: true,
       tooltipPlacement: "left",
+      capstoneProjectModalVisible: false,
+      learningPortalModalVisible: false,
+      modalSize: "55vw"
     };
     this.project_header = React.createRef()
     this.project_card = React.createRef()
-
+    this.projectList = React.createRef()
   }
+
   componentDidMount() {
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions); document.addEventListener('scroll', function (x) {
@@ -23,6 +30,7 @@ class Projects extends React.Component {
     lax.update(window.scrollY)
     lax.addElement(this.project_header.current)
     lax.addElement(this.project_card.current)
+
   }
 
   componentWillUnmount() {
@@ -30,16 +38,40 @@ class Projects extends React.Component {
     lax.removeElement(this.project_header.current)
     lax.removeElement(this.project_card.current)
   }
-
   updateWindowDimensions = () => {
+    if (window.innerWidth < 1600) {
+      this.setState({ modalSize: "70vw" });
+    } else {
+      this.setState({ modalSize: "55vw" });
+    }
     if (window.innerWidth < 680) {
       this.setState({ tooltipPlacement: "top" });
     } else {
       this.setState({ tooltipPlacement: "left" });
     }
   }
+  onClickProject = (id) => {
+    switch (id) {
+      case 1:
+        this.setState({ capstoneProjectModalVisible: true });
+        break;
+      case 2:
+        this.setState({ learningPortalModalVisible: true });
+        break;
+      default:
+        console.log('no match project id found')
+        break;
+    }
+  }
+  modalCancel = () => {
+    this.setState({
+      capstoneProjectModalVisible: false,
+      learningPortalModalVisible: false
+    })
+  }
   render() {
-    const { tooltipPlacement } = this.state;
+    const { tooltipPlacement, capstoneProjectModalVisible, learningPortalModalVisible, modalSize } = this.state;
+
     return (
       <div className="projects__container">
         <div className="projects__header" ref={this.project_header} data-lax-blur="0 5, 400 5,790 5,1000 0">
@@ -51,87 +83,74 @@ class Projects extends React.Component {
           </div>
         </div>
         <div className="projects__content" ref={this.project_card} data-lax-blur="0 5, 400 5,790 5,1000 0">
-          <br></br>
-          <Timeline >
-            <Tooltip title="🛠 Constantly Updating" placement={tooltipPlacement}>
-              <Timeline.Item>
-                2020-05 to Current
-              <Card size="small" title="This portfoilo site !😎" hoverable>
-                  <p>
-                    A rapid build responsive portfoilo site using react
-                </p>
-                  <p>
-                    <a href="https://github.com/ChunHoLum/cool-portfolio-site" target="_blank" rel="noopener noreferrer"> GitHub Available</a>
-                  </p>
-                  <Tag color="#5ED4F4">React.js</Tag>
-                  <Tag color="#F7A614">Javascript</Tag>
-                  <Tag color="#ED5F26">HTML5</Tag>
-                  <Tag color="#249FDE">CSS3</Tag>
-                  <Tag color="#0170FE">ANT Design</Tag>
-                </Card>
-              </Timeline.Item>
-            </Tooltip>
-
-            <Tooltip title="🛠 Constantly Updating" placement={tooltipPlacement}>
-
-              <Timeline.Item >
-                2020-05 to Current
-              <Card size="small" title="nodejs-backend-boilerplate" hoverable >
-                  <p>
-                    A custom node.js boilerplate with register & login, featured on JWT authentication, role base access control, winston logging, mongoDB and simple use <span role="img" aria-label="Smile Emoji">🙂</span>
-                  </p>
-                  <p>
-                    <a href="https://github.com/ChunHoLum/nodejs-backend-boilerplate" target="_blank" rel="noopener noreferrer"> GitHub Available</a>
-                  </p>
-                  <Tag color="#F7A614">Javascript</Tag>
-                  <Tag color="#73AA62">Node.js</Tag>
-                  <Tag color="#c3c3c3" style={{ color: 'black' }}>Express.js</Tag>
-                </Card>
-              </Timeline.Item>
-            </Tooltip>
-
-            <Tooltip title="🛠 Constantly Updating" placement={tooltipPlacement}>
-              <Timeline.Item>
-                2020-02 to Current
-              <Card size="small" title="Spectra Education Portal" hoverable>
-                  <p>
-                    A role-based learning portal allow students and teachers interact and perform different on-demand tasks
-                  </p>
-                  <p>
-                    <a>Details coming soon</a>
-                  </p>
-                  <Tag color="#5ED4F4">React.js</Tag>
-                  <Tag color="#F7A614">Javascript</Tag>
-                  <Tag color="#73AA62">Node.js</Tag>
-                  <Tag color="#c3c3c3" style={{ color: 'black' }}>Express.js</Tag>
-                </Card>
-              </Timeline.Item>
-            </Tooltip>
-
-            <Tooltip title="👍 Done" placement={tooltipPlacement}>
-              <Timeline.Item color="green">
-                2019-08 to 2020-05
-              <Card size="small" title="Capstone Project🎉- Digital Identity Management Framework" hoverable >
-                  <p>
-                    A digital identity management framework using blockchain technology.
-                  </p>
-                  <p>
-                    <a>Video Demostration Coming Soon</a>
-                  </p>
-                  <div className="tags__container">
-                    <Tag color="#7682C5">Ethereum</Tag>
-                    <Tag color="#EF6830">Web3.js</Tag>
-                    <Tag color="#1B1B1B">Solidity</Tag>
-                    <Tag color="#5ED4F4">React.js</Tag>
-                    <Tag color="#F7A614">Javascript</Tag>
-                    <Tag color="#73AA62">Node.js</Tag>
-                    <Tag color="#c3c3c3" style={{ color: 'black' }}>Express.js</Tag>
-                  </div>
-                </Card>
-              </Timeline.Item>
-            </Tooltip>
-          </Timeline>
+          <div className="project__list" ref={this.projectList}>
+            <Timeline>
+              <ProjectCard
+                title='This portfoilo site !😎'
+                description='A rapid build responsive portfoilo site using react'
+                source={<a href="https://github.com/ChunHoLum/cool-portfolio-site" target="_blank" rel="noopener noreferrer"> GitHub Available</a>}
+                tags={[
+                  { name: 'React.js', color: '#5ED4FD' },
+                  { name: 'Javascript', color: '#F7A614' },
+                  { name: 'HTML5', color: '#ED5F26' },
+                  { name: 'CSS3', color: '#249FDE' },
+                  { name: 'ANT Design', color: '#0170FE' },
+                ]}
+                date='2020-05 to Current'
+                tooltipPlacement={tooltipPlacement}
+                tooltipTitle='🛠 Constantly Updating'
+              />
+              <ProjectCard
+                title='nodejs-backend-boilerplate'
+                description='A custom node.js boilerplate with register & login, featured on JWT authentication, role base access control, winston logging, mongoDB and simple use 🙂'
+                source={<a href="https://github.com/ChunHoLum/nodejs-backend-boilerplate" target="_blank" rel="noopener noreferrer"> GitHub Available</a>}
+                tags={[
+                  { name: 'Javascript', color: '#F7A614' },
+                  { name: 'Node.js', color: '#73AA62' },
+                  { name: 'Express.js', color: '#c3c3c3', fontColor: 'black' },
+                ]}
+                date='2020-05 to Current'
+                tooltipPlacement={tooltipPlacement}
+                tooltipTitle='🛠 Constantly Updating'
+              />
+              <ProjectCard
+                title='Spectra Education Portal'
+                description='A role-based learning portal allow students and teachers interact and perform different on-demand tasks'
+                source={<Button type="link" onClick={() => this.onClickProject(2)} style={{ padding: '0' }}>Details</Button>}
+                tags={[
+                  { name: 'React.js', color: '#5ED4F4' },
+                  { name: 'Javascript', color: '#F7A614' },
+                  { name: 'Node.js', color: '#73AA62' },
+                  { name: 'Express.js', color: '#c3c3c3', fontColor: 'black' },
+                ]}
+                date='2020-02 to Current'
+                tooltipPlacement={tooltipPlacement}
+                tooltipTitle='🛠 Constantly Updating'
+              />
+              <ProjectCard
+                title='Capstone Project🎉- Digital Identity Management Framework'
+                description='A digital identity management framework using blockchain technology'
+                source={<Button type="link" onClick={() => this.onClickProject(1)} style={{ padding: '0' }}>Details</Button>}
+                tags={[
+                  { name: 'Ethereum', color: '#7682C5' },
+                  { name: 'Web3.js', color: '#EF6830' },
+                  { name: 'Solidity', color: '#1B1B1B' },
+                  { name: 'React.js', color: '#5ED4F4' },
+                  { name: 'Javascript', color: '#F7A614' },
+                  { name: 'Node.js', color: '#73AA62' },
+                  { name: 'Express.js', color: '#c3c3c3', fontColor: 'black' },
+                ]}
+                date='2019-08 to 2020-05'
+                tooltipPlacement={tooltipPlacement}
+                tooltipTitle='👍 Done'
+                tooltipColor='green'
+              />
+              <Timeline.Item color='green'> 4.54 billion years ago - Hello World <span role="img" aria-label="earth" >🌍</span></Timeline.Item>
+            </Timeline>
+          </div>
         </div>
+        <CapstoneProjectModal visible={capstoneProjectModalVisible} modalSize={modalSize} modalCancel={this.modalCancel} />
+        <LearningPortalModal visible={learningPortalModalVisible} modalSize={modalSize} modalCancel={this.modalCancel} />
       </div>
     );
   }

@@ -15,13 +15,15 @@
     .skills__header__title{
       font-size: 2rem;
       color: var(--skills-header-title);
+      
     }
     .searchbar{
       font-size: 1rem;
       text-align: left;
     }
-  
+    
   }
+  
   .skills__card__container{
     // background-color: red;
     transition: all 0.5s ease-in-out;
@@ -90,7 +92,7 @@
         opacity: 1;
         height: 1.4rem;
         &:hover{
-          background-color: #535252;
+          background-color: var(--skills-item-hover);
         }
       }
       .skills__card__footer{

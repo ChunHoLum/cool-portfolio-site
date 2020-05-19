@@ -31,12 +31,12 @@
   --black7: #313131;
   --black8: #1f1e1e;
   --black9: rgb(158, 158, 158);
+  --somegrey: #535252;
 }
 .light {
   --about-bg: var(--light-grey1);
   --about-text: var(--dark-grey4);
   --about-header: var(--black2);
-
   --footer-bg: var(--black5);
   --skills-bg: var(--light-grey);
   --skills-header-title: var(--black1);
@@ -44,11 +44,9 @@
   --skill-card-border: var(--grey2);
   --skills-card-description: var(--dark-grey1);
   --skills-card-hover: var(--blue1);
-
+  --skills-item-hover:var(--dark-grey5);
   --contact-bg: var(--white);
   --contact-header-title: var(--black0);
-  
-
   --project-bg: var(--white);
   --project-header-title: var(--black3);
   --project-header-description: var(--black3);
@@ -58,6 +56,10 @@
   --project-card-text: var(--black2);
   --project-timeline-text: var(--black2);
   --project-timeline-border: var(--light-grey1);
+
+  --project-modal-bg: red;
+  --project-modal-title: var(--black4);
+  --project-modal-description: var(--black2);
 
   --nav-bg: var(--white);
   --nav-border: var(--grey);
@@ -84,6 +86,19 @@
   --hero-project-btn-border: var(--dark-grey4);
 }
 .dark {
+  --project-bg: var(--black1);
+  --project-header-title: var(--white);
+  --project-header-description: var(--dark-grey1);
+  --project-card-bg: var(--black1);
+  --project-card-border: var(--dark-grey2);
+  --project-card-header-text: var(--grey);
+  --project-card-text: var(--grey);
+  --project-timeline-text: var(--dark-grey1);
+  --project-timeline-border: var(--black0);
+  --project-modal-bg: red;
+  --project-modal-title: var(--white);
+  --project-modal-description: var(--white);
+
   --footer-bg: var(--black5);
   --about-bg: var(--black8);
   --about-text: var(--black9);
@@ -99,6 +114,8 @@
   --skill-card-border: var(--grey0);
   --skills-card-description: var(--grey1);
   --skills-card-hover: var(--blue1);
+  --skills-item-hover:var(--somegrey);
+
   --contact-bg: var(--black1);
   --contact-header-title: var(--white);
   --hero-bg: var(--black1);
@@ -120,16 +137,7 @@
 
   
   
-  --project-bg: var(--black1);
-  --project-header-title: var(--white);
-  --project-header-description: var(--dark-grey1);
-  --project-card-bg: var(--black1);
-  --project-card-border: var(--dark-grey2);
-  --project-card-header-text: var(--grey);
-  --project-card-text: var(--grey);
-  --project-timeline-text: var(--dark-grey1);
-  --project-timeline-border: var(--black0);
-
+  
 }
 html{
   scroll-behavior: smooth;

@@ -19,7 +19,11 @@ class About extends React.Component {
 
           <div className="about__content">
             My name is Lum Chun Ho, a Hong Kong based full stack web developer, graduate of Information Security.
-          <div className="about__content__list">
+            <p>
+              I am a highly motivated, ambitious and multifaceted individual, currently seeking to embrace new challenges for professional career.
+              Preferred team player with capability of handling multiple priorities in timely manner stressed by challenging work environments.
+            </p>
+            <div className="about__content__list">
               <div className="about__content__list_left">
                 <p>Things I love when I code...</p>
                 <ul>
@@ -32,7 +36,7 @@ class About extends React.Component {
 
             </div>
             <p>
-              Check out more from my <a href="https://noobbucket.s3.us-east-2.amazonaws.com/lumchunho.pdf" target="_blank" rel="noopener noreferrer">Resume</a>.
+              Check out more from my <a href="https://noobbucket.s3.us-east-2.amazonaws.com/lumchunho_web_bc.pdf" target="_blank" rel="noopener noreferrer">Resume</a>.
             </p>
             <p> Or </p>
           </div>

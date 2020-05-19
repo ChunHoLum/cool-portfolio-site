@@ -202,7 +202,7 @@ class Skills extends React.Component {
     }
     return (
       <div className="skills__container">
-        <div className="skills__header" ref={this.header} data-lax-blur="0 5, 400 0,790 0, 800 1, 1000 5" >
+        <div className="skills__header" ref={this.header} data-lax-blur="0 5, 400 0,790 0" >
           <div className="skills__header__title">What can I do ?</div>
           <br></br>
           <SearchBar
@@ -212,7 +212,7 @@ class Skills extends React.Component {
             handleBlur={this.handleBlur}
           />
         </div>
-        <div className="skills__card__container" ref={this.card_container_ref} data-lax-blur="0 5,  400 0, 790 0, 800 1, 1000 5 " data-lax-opacity="0 0, 100 0, 400 1" data-lax-translate-y="0 100,  400 0">
+        <div className="skills__card__container" ref={this.card_container_ref} data-lax-blur="0 5,  400 0, 790 0 " data-lax-opacity="0 0, 100 0, 400 1" data-lax-translate-y="0 100,  400 0">
           {skills.map((skill, index) =>
             <SkillCard skill={skill} key={index} />
           )}

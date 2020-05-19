@@ -20,7 +20,6 @@
       color: var(--project-header-description)
     }
   }
-  
   .projects__content{
     transition: all 0.5s ease-in-out;
     padding-top: 1.2rem;
@@ -56,6 +55,32 @@
       }
     }
   }
+}
+.ant-modal-body{
+  // background-color: var(--project-modal-bg); 
+  .slider_container{
+    padding: 30px;
+    padding-top: 0px;
+    // color:var(--project-modal-title);
+    .sider{
+      padding:20px;
+      overflow: hidden;
+      // color: var(--project-modal-description);
+      .resize-img{
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+.slick-next::before{
+  color: #000 !important;
+  font-size: 25px !important;
+}
+.slick-prev::before{
+  color: #000 !important;
+  font-size: 25px !important;
 }
 @media only screen and (max-width: 680px) {
   .projects__header{

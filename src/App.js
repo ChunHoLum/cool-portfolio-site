@@ -24,7 +24,6 @@ const SettingButton = lazy(() => import('./components/setting-button/setting-but
 
 const renderLoader = () => <p></p>;
 
-
 class App extends React.Component {
   constructor() {
     super();
@@ -34,28 +33,22 @@ class App extends React.Component {
     }
     this.appRef = React.createRef();
     lax.setup();
-
   }
 
-
-  hide = () => { this.setState({ visible: false, }); };
-
   componentDidMount() {
-
     setTimeout(() => { this.setState({ visible: true, }) }, 500)
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       // dark mode
       console.log("dark mode detected😗")
       this.appRef.current.classList.replace('light', 'dark');
-      this.setState({
-        themePreference: 'dark'
-      })
+      this.setState({ themePreference: 'dark' })
     }
     window.addEventListener('scroll', this.hide);
   }
   componentWillUnmount() {
     window.removeEventListener('scroll', this.hide);
   }
+  hide = () => { this.setState({ visible: false, }); };
 
   render() {
     return (
@@ -82,21 +75,14 @@ class App extends React.Component {
             <Projects />
           </Suspense>
         </section>
-
         <section className="about-section" id="about-section">
           <Suspense fallback={renderLoader()}>
             <About />
           </Suspense>
         </section>
-        {/* <section className="contact-section" id="contact-section">
-          <Suspense fallback={renderLoader()}>
-            <Contact />
-          </Suspense>
-        </section>  */}
         <Suspense fallback={renderLoader()}>
           <Footer />
         </Suspense>
-
         <Suspense fallback={renderLoader()}>
           <SettingButton visible={this.state.visible} hide={this.hide} appRef={this.appRef} themePreference={this.state.themePreference} />
         </Suspense>

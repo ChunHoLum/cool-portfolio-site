@@ -26,13 +26,13 @@ const Messagebar = () => {
           <span><b>Who Am I ?</b></span>
           <span>&emsp;——&emsp; </span>
           <span>A passionate, progressive guy and a enthusiast of Web Development.</span>
-          &emsp;<a href="https://noobbucket.s3.us-east-2.amazonaws.com/lumchunho.pdf" target="_blank" rel="noopener noreferrer"> Download full resume !</a>
+          &emsp;<a href="https://noobbucket.s3.us-east-2.amazonaws.com/lumchunho_web_bc.pdf" target="_blank" rel="noopener noreferrer"> Download full resume !</a>
         </>
         :
         <>
           {width > 680 ?
             <Tooltip placement="bottom" title="Click to download full resume !">
-              <a href="https://noobbucket.s3.us-east-2.amazonaws.com/cv_lumchunho.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="https://noobbucket.s3.us-east-2.amazonaws.com/lumchunho_web_bc.pdf" target="_blank" rel="noopener noreferrer">
 
                 <span><b>Who Am I ?</b></span>
                 <span>&emsp;——&emsp; </span>
@@ -41,7 +41,7 @@ const Messagebar = () => {
             </Tooltip>
             :
             <Tooltip placement="bottom" title="Click to download full resume !">
-              <a href="https://noobbucket.s3.us-east-2.amazonaws.com/cv_lumchunho.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="https://noobbucket.s3.us-east-2.amazonaws.com/lumchunho_web_bc.pdf" target="_blank" rel="noopener noreferrer">
                 <span role="img" aria-label="hehe"> Hover me ! 😊 </span>
 
               </a>
