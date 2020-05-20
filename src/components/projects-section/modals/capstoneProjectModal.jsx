@@ -39,7 +39,7 @@ const CapstoneProjectModal = ({ visible, modalSize, modalCancel }) => {
               The system using <code>MERN</code> stack, which include MongoDB, Express, React + Redux and NodeJS
             </p>
             <ul>
-              <li>Blockchain as a services - allow user identity data upload their blockchain securely</li>
+              <li>Blockchain as a services - allow user identity data upload to blockchain securely</li>
               <li>Protected API for third-party access - easy manage and trace record</li>
             </ul>
             <img alt="mernstack" src={mernstack} width="250" height="265"></img>
